@@ -32,7 +32,7 @@ $includeDir = join(DIRECTORY_SEPARATOR, array("", "usr", "local", "include"));
 $wwwdir = join(DIRECTORY_SEPARATOR, array ($basedir, "eg-test"));
 $casperScript = join(DIRECTORY_SEPARATOR, array($includeDir, "cpcmsNavigate", "searchCPCMS.js"));
 $casperjsCommand = join(DIRECTORY_SEPARATOR, array($toolsDir, "casperjs"));
-$baseURL = "https://eg-test.clsphila.org/";
+$baseURL = getenv("BASE_URL");
 $pdftotext = $toolsDir . DIRECTORY_SEPARATOR . "pdftotext";
 $sendGridApiKey = getenv("SENDGRID_KEY");
 
@@ -49,6 +49,12 @@ $dbPassword = getenv("DB_PASS");
 $dbUser = getenv("DB_USER");
 $dbName = getenv("DB_NAME");
 $dbHost = getenv("DB_HOST");
+
+//charge DB information
+$chargeDBHost = getenv("CHARGE_DB_HOST");
+$chargeDBUser = getenv("CHARGE_DB_USER");
+$chargeDBPassword = getenv("CHARGE_DB_PASS");
+$chargeDBName = getenv("CHARGE_DB_NAME");
 
 // this is only needed in the CLS production environmnet
 /*

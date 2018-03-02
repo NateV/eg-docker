@@ -10,6 +10,11 @@ services:
             dockerfile: Dockerfile
         image: expungement_generator:latest
         environment:
+            BASE_URL: "localhost"
+            CHARGE_DB_HOST: db
+            CHARGE_DB_USER: eg_user
+            CHARGE_DB_PASS: somerandompassword
+            CHARGE_DB_NAME: cpcms_aopc_summary
             DB_HOST: db
             DB_NAME: eg_db
             DB_USER: eg_user
@@ -33,7 +38,7 @@ services:
             - "3306"
         volumes:
             - "../Expungement-Generator/migrations:/docker-entrypoint-initdb.d"
-        # PS this is the NateV fork of the Expungement-Generator.
+              # PS this is the NateV fork of the Expungement-Generator.
 networks:
     eg-net:
         driver: bridge
