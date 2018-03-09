@@ -26,10 +26,10 @@ $debug=false;
 
 
 // for a linux system
-$basedir = join(DIRECTORY_SEPARATOR, array("", "srv", "EG"));
+$basedir = join(DIRECTORY_SEPARATOR, array("", "var", "www"));
 $toolsDir = join(DIRECTORY_SEPARATOR, array("", "usr", "local", "bin"));
 $includeDir = join(DIRECTORY_SEPARATOR, array("", "usr", "local", "include"));
-$wwwdir = join(DIRECTORY_SEPARATOR, array ($basedir, "eg-test"));
+$wwwdir = join(DIRECTORY_SEPARATOR, array ($basedir, "html"));
 $casperScript = join(DIRECTORY_SEPARATOR, array($includeDir, "cpcmsNavigate", "searchCPCMS.js"));
 $casperjsCommand = join(DIRECTORY_SEPARATOR, array($toolsDir, "casperjs"));
 $baseURL = getenv("BASE_URL");
