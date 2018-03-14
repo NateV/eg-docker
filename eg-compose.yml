@@ -7,10 +7,10 @@ services:
     expungement_generator:
         build:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: eg-dockerfile
         image: expungement_generator:latest
         environment:
-            BASE_URL: "localhost"
+            BASE_URL: "http://localhost:9090/"
             CHARGE_DB_HOST: db
             CHARGE_DB_USER: eg_user
             CHARGE_DB_PASS: somerandompassword
@@ -23,9 +23,12 @@ services:
         networks:
             - eg-net
         ports:
-            - "8080:80"
+            - "9090:80"
     db:
-        image: mysql:5.7
+        build:
+            context: .
+            dockerfile: db-dockerfile
+        image: expungement_generator_db:latest 
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: someBigOleComplexPassword
@@ -36,9 +39,5 @@ services:
             - eg-net
         expose:
             - "3306"
-        volumes:
-            - "../Expungement-Generator/migrations:/docker-entrypoint-initdb.d"
-              # PS this is the NateV fork of the Expungement-Generator.
 networks:
     eg-net:
-        driver: bridge
