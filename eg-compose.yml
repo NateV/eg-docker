@@ -1,4 +1,4 @@
-version: '3' #this refers to the version of the dockerfile format.
+version: '2' #this refers to the version of the dockerfile format.
 
 # Version 3 of the docker-compose format:
 # https://docs.docker.com/compose/compose-file/
