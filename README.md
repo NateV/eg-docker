@@ -1,6 +1,8 @@
-# Expunge-in-box
+# Expunge-in-a-box
 
 The docker configuration parts of a containerized version of mhollander's Expungement Generator.
+
+The database initializes with a sigle admin user, admin@example.fake, password admin. __Change this before using your site for anything.__.
 
 ## Run to test
 
@@ -12,7 +14,4 @@ Run with `docker-compose -f eg-compose.yml up --build`.
 
 Edit the `docker-compose` file to have the credentials for connecting with the database that already exists.
 
-You need to use `network_mode: "host"` to connect to the host machine. 
-
-
-
+You need to use `network_mode: "host"` to connect to the host machine.
