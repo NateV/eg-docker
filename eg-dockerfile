@@ -9,8 +9,9 @@ RUN apt-get update && \
     wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
     tar -xvjf phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
     mv phantomjs-2.1.1-linux-x86_64 /usr/local/share && \
-    ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin && \
-    git clone git://github.com/casperjs/casperjs.git /usr/local/casperjs && \
+    ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
+
+RUN git clone git://github.com/casperjs/casperjs.git /usr/local/casperjs && \
     cd /usr/local/casperjs && \
     ln -sf `pwd`/bin/casperjs /usr/local/bin/casperjs && \
     cd /usr/local/include && \
